@@ -15,5 +15,5 @@ jobs:
            username: ${{ DOCKER_USERNAME }}
            password: ${{ DOCKER_PASSWORD }}
            registry: hub.docker.com
-           repository: gerardojunior/nodejs
+           repository: kernblick/nodejs
            tags: latest

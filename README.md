@@ -1,46 +1,50 @@
-# Environment of nodejs project [![.github/workflows/ci.yml](https://github.com/gerardo-junior/nodejs-docker/workflows/.github/workflows/ci.yml/badge.svg)](https://github.com/gerardo-junior/nodejs-docker/actions)
+# Environment of nodejs project [![.github/workflows/ci.yml](https://github.com/kernblick/nodejs-docker/workflows/.github/workflows/ci.yml/badge.svg)](https://github.com/kernblick/nodejs-docker/actions)
 
-```
-    [+] AUTOR:        Gerardo Junior
-    [+] SITE:         https://gerardo-junior.com
-    [+] EMAIL:        me@gerardo-junior.com
-    [+] GITHUB:       https://github.com/gerardo-junior/nodejs-docker.git
-    [+] TELEGRAM:     @MrGerardoJunior
+```bash
+    [+] AUTOR:        Markus Luckey
+    [+] CREDITS:      Gerardo Junior
+    [+] SITE:         https://kernblick.de
+    [+] EMAIL:        luckey@kernblick.de
+    [+] GITHUB:       https://github.com/kernblick/nodejs-docker.git
 ```
 
 Docker image to run [node](https://nodejs.org/) projects
 
-> The project must be in the **/src** container folder 
+> The project must be in the **/src** container folder
+
 ## Tags available
 
-- [stable](https://github.com/gerardo-junior/nodejs-docker/blob/master/Dockerfile), [latest](https://github.com/gerardo-junior/nodejs-docker/blob/develop/Dockerfile), [1.0.0](https://github.com/gerardo-junior/nodejs-docker/blob/1.0.0/Dockerfile)   
-    - [library/node](https://hub.docker.com/_/node) 8.15.0-alpine
-        - [node](https://nodejs.org/) 8.15.0
-        - [yarn](https://yarnpkg.com/) 1.12.3
+- [latest](https://github.com/kernblick/nodejs-docker/blob/develop/Dockerfile)
+  - [library/node](https://hub.docker.com/_/node) 17.1.0-alpine
+    - [node](https://nodejs.org/) 17.1.0
+    - [yarn](https://yarnpkg.com/) 1.22.15
 
-## Come on, do your tests
+## Run
 
 ```bash
-docker pull gerardojunior/nodejs:stable
+docker pull kernblick/nodejs:latest
+docker run kernblick/nodejs
 ```
+
 ## How to build
 
 to build the image you need install the [docker engine](https://www.docker.com/) only
 
-> You can try building with different versions of software with docker args, for example: NODE_VERISON=10.0.0
+> You can try building with different versions of software with docker args, for example: NODE_VERISON=16.13.0
 
 ```bash
-docker build https://github.com/gerardo-junior/nodejs-docker.git --tag gerardojunior/nodejs
+docker build https://github.com/kernblick/nodejs-docker.git --tag kernblick/nodejs
 ```
 
 ## How to use
 
-##### With [docker](https://docs.docker.com/engine/reference/commandline/docker/) command:
+### With [docker](https://docs.docker.com/engine/reference/commandline/docker/) command
 
 ```bash
-docker run -it --rm gerardojunior/nodejs:stable [sh command or npm script]
+docker run -it --rm kernblick/nodejs:latest [sh command or npm script]
 ```
-##### With [docker-compose](https://docs.docker.com/compose/) command:
+
+### With [docker-compose](https://docs.docker.com/compose/) command
 
 Create the [docker-compose.yml](https://docs.docker.com/compose/compose-file/) file  in your project folder with:
 
@@ -48,24 +52,26 @@ Create the [docker-compose.yml](https://docs.docker.com/compose/compose-file/) f
 # (...)
 
   nodejs:
-    image: gerardojunior/nodejs:stable
+    image: kernblick/nodejs:latest
     restart: on-failure
 
 # (...)
 ```
 
 run this command with this syntax
+
 ```bash
 docker-compose run node [sh command or npm script]
 ```
 
 ## How to enter image shell
- 
+
 ```bash
-docker run -it --rm gerardojunior/nodejs sh
+docker run -it --rm kernblick/nodejs sh
 # or with docker-compose
 docker-compose run node sh
 ```
 
-### License  
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/gerardo-junior/nodejs-docker/blob/master/LICENSE) file for details
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/kernblick/nodejs-docker/blob/master/LICENSE) file for details

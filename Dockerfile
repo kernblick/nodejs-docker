@@ -1,9 +1,9 @@
-ARG NODE_VERSION=8.15.0
+ARG NODE_VERSION=17.1.0
 
 FROM library/node:${NODE_VERSION}-alpine
 
-LABEL maintainer="Gerardo Junior <me@gerardo-junior.com>"
-LABEL url="https://github.com/gerardo-junior/nodejs-docker.git"
+LABEL maintainer="Markus Luckey <luckey@kernblick.de>"
+LABEL url="https://github.com/kernblick/nodejs-docker.git"
 
 ENV USER 'node'
 ENV WORKDIR '/src'
@@ -29,4 +29,4 @@ VOLUME [${WORKDIR}]
 WORKDIR ${WORKDIR}
 USER ${USER}
 ENTRYPOINT ["/bin/sh", "/opt/tools/entrypoint.sh"]
-CMD [ "npm", "run", "start" ]
+CMD [ "yarn", "run", "start" ]
